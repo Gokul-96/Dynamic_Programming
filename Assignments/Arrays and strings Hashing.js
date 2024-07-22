@@ -34,3 +34,36 @@ for(let i=0; i<nums.length; i++)
 // solution 
 //  input: [2,7,11,15]
 //  output: 9
+
+
+
+// Question 2: 
+
+//Anagram is formed by rearranging the letters of a word to produce another word.
+
+function Anagrams(strs) {
+    //create hash map
+        const map ={};
+    
+        for (let str of strs){
+    //sort characters
+            const sortedStr = str.split('').sort().join('');
+             
+        
+
+  
+
+if (!map[sortedStr]) {
+    map[sortedStr] = [];
+}
+
+map[sortedStr].push(str);
+}
+
+// Return the values of the hash map which are the groups of anagrams
+return Object.values(map);
+}
+
+const strs = ["eat", "tea", "tan", "ate", "nat", "bat"];
+const result = Anagrams(strs);
+console.log(result);
